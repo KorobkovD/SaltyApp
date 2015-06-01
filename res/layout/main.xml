@@ -33,4 +33,13 @@
                 android:text="Английская речь"
                 android:id="@+id/radioENG" android:textSize="20dp" android:layout_gravity="center"/>
     </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Korobkov D."
+        android:id="@+id/textView"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
