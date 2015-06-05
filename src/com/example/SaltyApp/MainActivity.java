@@ -1,12 +1,16 @@
 package com.example.SaltyApp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -128,5 +132,51 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         }
         Toast.makeText(getApplicationContext(), builder.toString(), Toast.LENGTH_LONG).show();
         return builder.toString();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {         //появление меню у активити
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    /**
+     * Вывод информации о приложении
+     * @param item
+     */
+    public void about(MenuItem item){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("О программе")
+                .setMessage(R.string.about_text)
+                .setIcon(R.drawable.about)
+                .setCancelable(false)
+                .setNegativeButton("Закрыть",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+    /**
+     * Вывод справки к приложению
+     * @param item
+     */
+    public void info(MenuItem item){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Справка")
+                .setMessage(R.string.legend)
+                .setIcon(R.drawable.info)
+                .setCancelable(false)
+                .setNegativeButton("Закрыть",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 }
