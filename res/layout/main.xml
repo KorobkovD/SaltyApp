@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
         android:layout_alignWithParentIfMissing="false"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:layout_below="@+id/editText"
         android:layout_alignParentLeft="true"
         android:id="@+id/radioGroup">
@@ -30,12 +30,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Русская речь"
-                android:id="@+id/radioRUS" android:textSize="20dp" android:layout_gravity="center"/>
+                android:id="@+id/radioRUS" android:textSize="15dp" android:layout_gravity="center"
+            android:enabled="true"
+            android:checked="true" />
         <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Английская речь"
-                android:id="@+id/radioENG" android:textSize="20dp" android:layout_gravity="center"/>
+                android:text="&quot;Соленая&quot; речь"
+                android:id="@+id/radioSALT" android:textSize="15dp" android:layout_gravity="center"/>
     </RadioGroup>
 
     <TextView
