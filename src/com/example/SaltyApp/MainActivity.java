@@ -44,24 +44,42 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         waitView.setImageResource(R.drawable.wait);
         toastContainer.addView(waitView, 0);
         toast.show();
-        //загрузка модуля речи
+        // загрузка модуля речи
         tts = new TextToSpeech(this, this);
+        // элементы управления
         radiogroup = (RadioGroup)findViewById(R.id.radioGroup);
         btnSpeak = (Button) findViewById(R.id.button);
+        btnSpeak.setWidth(170);
+        Button btnExamples = (Button) findViewById(R.id.buttonExamples);
+        btnExamples.setWidth(170);
         txtText = (EditText) findViewById(R.id.editText);
+        Button btnClear = (Button) findViewById(R.id.buttonClear);
         // узнать размеры экрана
         Display display = getWindowManager().getDefaultDisplay();
         DisplayMetrics metricsB = new DisplayMetrics();
         display.getMetrics(metricsB);
         // установка максимального значения высоты поля ввода текста
         txtText.setMaxHeight(metricsB.heightPixels - 300);
+        // функционал кнопок
         btnSpeak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
                 speakOut();
             }
         });
-        //TODO: меню приложения с хелпом и эбаутом.
+        btnExamples.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtText.setText(R.string.example);
+            }
+        });
+        btnClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtText.setText("");
+            }
+        });
+        // TODO: кнопка очистки и ещё примеров!!
     }
 
     @Override
@@ -119,6 +137,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
      * @return модифицированная введенная строка, на "соленый" манер
      */
     public String saltyText(String s) {
+        s = s.toLowerCase();
         HashSet<Character> vowels = new HashSet<Character>();
         StringBuilder builder = new StringBuilder();
         builder.append(s);
