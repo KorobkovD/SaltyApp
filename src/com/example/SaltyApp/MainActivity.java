@@ -1,12 +1,16 @@
 package com.example.SaltyApp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,24 +44,42 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         waitView.setImageResource(R.drawable.wait);
         toastContainer.addView(waitView, 0);
         toast.show();
-        //загрузка модуля речи
+        // загрузка модуля речи
         tts = new TextToSpeech(this, this);
+        // элементы управления
         radiogroup = (RadioGroup)findViewById(R.id.radioGroup);
         btnSpeak = (Button) findViewById(R.id.button);
+        btnSpeak.setWidth(170);
+        Button btnExamples = (Button) findViewById(R.id.buttonExamples);
+        btnExamples.setWidth(170);
         txtText = (EditText) findViewById(R.id.editText);
+        Button btnClear = (Button) findViewById(R.id.buttonClear);
         // узнать размеры экрана
         Display display = getWindowManager().getDefaultDisplay();
         DisplayMetrics metricsB = new DisplayMetrics();
         display.getMetrics(metricsB);
         // установка максимального значения высоты поля ввода текста
         txtText.setMaxHeight(metricsB.heightPixels - 300);
+        // функционал кнопок
         btnSpeak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
                 speakOut();
             }
         });
-        //TODO: меню приложения с хелпом и эбаутом.
+        btnExamples.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtText.setText(R.string.example);
+            }
+        });
+        btnClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtText.setText("");
+            }
+        });
+        // TODO: кнопка очистки и ещё примеров!!
     }
 
     @Override
@@ -115,6 +137,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
      * @return модифицированная введенная строка, на "соленый" манер
      */
     public String saltyText(String s) {
+        s = s.toLowerCase();
         HashSet<Character> vowels = new HashSet<Character>();
         StringBuilder builder = new StringBuilder();
         builder.append(s);
@@ -128,5 +151,51 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         }
         Toast.makeText(getApplicationContext(), builder.toString(), Toast.LENGTH_LONG).show();
         return builder.toString();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {         //появление меню у активити
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    /**
+     * Вывод информации о приложении
+     * @param item
+     */
+    public void about(MenuItem item){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("О программе")
+                .setMessage(R.string.about_text)
+                .setIcon(R.drawable.about)
+                .setCancelable(false)
+                .setNegativeButton("Закрыть",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+    /**
+     * Вывод справки к приложению
+     * @param item
+     */
+    public void info(MenuItem item){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Справка")
+                .setMessage(R.string.legend)
+                .setIcon(R.drawable.info)
+                .setCancelable(false)
+                .setNegativeButton("Закрыть",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 }
