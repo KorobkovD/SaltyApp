@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Say it!</string>
-    <string name="about">О программе</string>
-    <string name="info">Справка</string>
-    <string name="legend">Простая программа, переводящая текст в речь с помощью синтеза речи Google.
-        \nЕсли у Вас не установлен синтез речи, программа сообщит об этом. Скачать его можно в
-        Google Play. Чтобы его включить, необходимо зайти в настройки, выбрать пункт "Синтез речи"
-        и поставить "точку" напротив синтеза речи Google.\nВ данный момент поддерживается только
-        русский язык.\n"Солёный" - это язык из детства, заключающийся в употреблении буквы С после
-        гласной буквы и затем снова этой гласной буквы.\nНапример: привет - присивесет.</string>
-    <string name="about_text">Данная программа не несет какого-либо смысла. Создана в
-        ознакомительных целях и ради фана.\n© Денис Коробков, 2015</string>
+    <string name="about">About</string>
+    <string name="info">Reference</string>
+    <string name="legend">Simple app, which transforms text to speech using speech synthesis by Google.\n
+        If you have no speech synthesis, this app will make a notification about it. You can download speech synthesis
+        in Google Play.\nCurrently this app supports only Russian language.\n"Salty" - it\'s the language from
+        childhood, it consists of using russian sound "s" after every vowel with this vowel. This mode applicable for
+        Russian keyboard only.</string>
+    <string name="about_text">This app has no any meaning. It was made for educational purposes and for fun.\n
+        © Denis Korobkov, 2015</string>
     <string name="example">Съешь ещё этих мягких французских булок, да выпей же чаю\nХочу 123456$\n
-        Полезность этой программы составляет 17%\nHello, stranger!\n# - символ решетки</string>
+        Полезность этой программы составляет 18%\n# - это символ решетки</string>
+    <string name="radioR">Russian</string>
+    <string name="radioS">\"Salty\"</string>
+    <string name="buttonEx">Examples</string>
+    <string name="buttonCl">Clear</string>
+    <string name="buttonSay">Say it!</string>
+    <string name="onLoadWait">Starting app. Please wait…</string>
+    <string name="initFail">TTS Initialization Failed :(\nPlease install speech synthesis by Google and turn it on.</string>
+    <string name="saltyConvert">One moment, please…</string>
+    <string name="dialogCloseBtn">Close</string>
 </resources>

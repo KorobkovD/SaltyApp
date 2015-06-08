@@ -36,8 +36,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         // вывод тоста с сообщением о загрузке приложения
-        Toast toast = Toast.makeText(getApplicationContext(),
-                "Приложение загружается. Подождите...", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(getApplicationContext(), R.string.onLoadWait, Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER, 0, 0);
         LinearLayout toastContainer = (LinearLayout) toast.getView();
         ImageView waitView = new ImageView(getApplicationContext());
@@ -79,7 +78,6 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
                 txtText.setText("");
             }
         });
-        // TODO: кнопка очистки и ещё примеров!!
     }
 
     @Override
@@ -87,8 +85,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         if (status == TextToSpeech.SUCCESS) {
             Locale locale = new Locale("ru");
             int result = tts.setLanguage(locale);
-            if (result == TextToSpeech.LANG_MISSING_DATA
-                    || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+            if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                 Log.e("TTS", "This Language is not supported");
             } else {
                 btnSpeak.setEnabled(true);
@@ -96,10 +93,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
             }
         } else {
             Log.e("TTS", "Initialization Failed!");
-            Toast.makeText(getApplicationContext(),
-                    "TTS Initialization Failed :(\nУстановите синтезатор речи Google и включите его в настройках:" +
-                            "\nСинтез речи -> Синтезатор речи Google",
-                    Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), R.string.initFail, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -117,8 +111,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
                 text = txtText.getText().toString();
                 break;
             case R.id.radioSALT:
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        "Один момент...", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(getApplicationContext(), R.string.saltyConvert, Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 LinearLayout toastContainer = (LinearLayout) toast.getView();
                 ImageView waitView = new ImageView(getApplicationContext());
@@ -165,11 +158,11 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
      */
     public void about(MenuItem item){
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle("О программе")
+        builder.setTitle(R.string.about)
                 .setMessage(R.string.about_text)
                 .setIcon(R.drawable.about)
                 .setCancelable(false)
-                .setNegativeButton("Закрыть",
+                .setNegativeButton(R.string.dialogCloseBtn,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();
@@ -185,11 +178,11 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
      */
     public void info(MenuItem item){
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle("Справка")
+        builder.setTitle(R.string.info)
                 .setMessage(R.string.legend)
                 .setIcon(R.drawable.info)
                 .setCancelable(false)
-                .setNegativeButton("Закрыть",
+                .setNegativeButton(R.string.dialogCloseBtn,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();

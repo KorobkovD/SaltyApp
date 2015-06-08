@@ -12,7 +12,7 @@
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Сказать!"
+            android:text="@string/buttonSay"
             android:id="@+id/button"
         android:textSize="20dp"
         android:layout_below="@+id/radioGroup"
@@ -29,15 +29,15 @@
         <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Русская речь"
+                android:text="@string/radioR"
                 android:id="@+id/radioRUS" android:textSize="15dp" android:layout_gravity="center"
             android:enabled="true"
             android:checked="true" />
         <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="&quot;Соленая&quot; речь"
-                android:id="@+id/radioSALT" android:textSize="15dp" android:layout_gravity="center"/>
+                android:text="@string/radioS"
+                android:id="@+id/radioSALT" android:textSize="15dp" android:layout_gravity="right"/>
     </RadioGroup>
 
     <TextView
@@ -52,16 +52,16 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Примеры"
+        android:text="@string/buttonEx"
         android:id="@+id/buttonExamples"
         android:layout_below="@+id/radioGroup"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true" android:textSize="20dp"/>
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Очистить"
+        android:text="@string/buttonCl"
         android:id="@+id/buttonClear"
         android:layout_below="@+id/radioGroup"
         android:layout_centerHorizontal="true" />
