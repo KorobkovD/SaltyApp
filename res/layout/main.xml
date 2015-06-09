@@ -16,7 +16,8 @@
             android:id="@+id/button"
         android:textSize="20dp"
         android:layout_below="@+id/radioGroup"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        style="@style/RButtonTheme" />
     <RadioGroup
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -55,14 +56,16 @@
         android:text="@string/buttonEx"
         android:id="@+id/buttonExamples"
         android:layout_below="@+id/radioGroup"
-        android:layout_alignParentLeft="true" android:textSize="20dp"/>
+        android:layout_alignParentLeft="true" android:textSize="20dp"
+        style="@style/LButtonTheme" />
 
     <Button
-        style="?android:attr/buttonStyleSmall"
+        style="@style/CButtonTheme"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:text="@string/buttonCl"
         android:id="@+id/buttonClear"
         android:layout_below="@+id/radioGroup"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="6.5dp" />
 </RelativeLayout>
