@@ -23,4 +23,10 @@
         Синтез речи -> Синтезатор речи Google</string>
     <string name="saltyConvert">Один момент…</string>
     <string name="dialogCloseBtn">Закрыть</string>
+    <string name="settings">Настройки</string>
+    <string name="ext_settings">Настройки внешнего вида</string>
+    <string name="bg_settings_summary">Выберите фон</string>
+    <string name="bg_settings">Фон приложения</string>
+    <string name="btn_settings_summary">Выберите стиль кнопок</string>
+    <string name="btn_settings">Кнопки</string>
 </resources>

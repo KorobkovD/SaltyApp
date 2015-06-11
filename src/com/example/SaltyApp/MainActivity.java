@@ -3,6 +3,7 @@ package com.example.SaltyApp;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.DisplayMetrics;
@@ -11,6 +12,7 @@ import android.view.Display;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -52,7 +54,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         Button btnExamples = (Button) findViewById(R.id.buttonExamples);
         btnExamples.setWidth(170);
         txtText = (EditText) findViewById(R.id.editText);
-        Button btnClear = (Button) findViewById(R.id.buttonClear);
+        final Button btnClear = (Button) findViewById(R.id.buttonClear);
         // узнать размеры экрана
         Display display = getWindowManager().getDefaultDisplay();
         DisplayMetrics metricsB = new DisplayMetrics();
@@ -79,6 +81,8 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
             }
         });
     }
+
+    //TODO: сделать рабочие настройки с выбором стиля!
 
     @Override
     public void onInit(int status) {
@@ -190,5 +194,15 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
                         });
         AlertDialog alert = builder.create();
         alert.show();
+    }
+
+    /**
+     * Вывод активити с настройками
+     * @param item
+     */
+    public void showPrefs(MenuItem item){
+        Intent settingsActivity = new Intent(getBaseContext(), Preferences.class);
+        startActivity(settingsActivity);
+        Toast.makeText(getApplicationContext(), "Этот пункт еще в разработке...", Toast.LENGTH_SHORT).show();
     }
 }

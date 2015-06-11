@@ -20,4 +20,10 @@
     <string name="initFail">TTS Initialization Failed :(\nPlease install speech synthesis by Google and turn it on.</string>
     <string name="saltyConvert">One moment, please…</string>
     <string name="dialogCloseBtn">Close</string>
+    <string name="settings">Settings</string>
+    <string name="ext_settings">Exterior settings</string>
+    <string name="bg_settings">Background</string>
+    <string name="bg_settings_summary">Choose the background</string>
+    <string name="btn_settings">Buttons</string>
+    <string name="btn_settings_summary">Choose the style of buttons</string>
 </resources>

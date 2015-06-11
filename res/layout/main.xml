@@ -2,7 +2,10 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+    android:id="@+id/main_lo"
+    android:background="@drawable/bg_b"
+    style="@android:style/Theme.Holo.Light">
 
     <EditText
             android:layout_width="fill_parent"
@@ -17,7 +20,9 @@
         android:textSize="20dp"
         android:layout_below="@+id/radioGroup"
         android:layout_alignParentRight="true"
-        style="@style/RButtonTheme" />
+        style="@style/ButtonTheme"
+        android:textColor="@color/btn_text_color"
+        android:textStyle="italic" />
     <RadioGroup
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -33,12 +38,14 @@
                 android:text="@string/radioR"
                 android:id="@+id/radioRUS" android:textSize="15dp" android:layout_gravity="center"
             android:enabled="true"
-            android:checked="true" />
+            android:checked="true"
+            android:textColor="#000000" />
         <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/radioS"
-                android:id="@+id/radioSALT" android:textSize="15dp" android:layout_gravity="right"/>
+                android:id="@+id/radioSALT" android:textSize="15dp" android:layout_gravity="right"
+            android:textColor="#000000" />
     </RadioGroup>
 
     <TextView
@@ -57,7 +64,9 @@
         android:id="@+id/buttonExamples"
         android:layout_below="@+id/radioGroup"
         android:layout_alignParentLeft="true" android:textSize="20dp"
-        style="@style/LButtonTheme" />
+        style="@style/ButtonTheme"
+        android:textColor="@color/btn_text_color"
+        android:textStyle="italic" />
 
     <Button
         style="@style/CButtonTheme"

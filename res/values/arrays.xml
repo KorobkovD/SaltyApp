@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bg_listArray">
+        <item>Gradient</item>
+        <item>Bubbles</item>
+    </string-array>
+
+    <string-array name="bg_listValues">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="btn_listArray">
+        <item>Gradient</item>
+        <item>Solid</item>
+    </string-array>
+
+    <string-array name="btn_listValues">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/ext_settings">
+        <ListPreference android:title="@string/bg_settings"
+            android:summary="@string/bg_settings_summary"
+            android:entries="@array/bg_listArray"
+            android:entryValues="@array/bg_listValues"
+            android:defaultValue="1"
+            android:key="saveBG"/>
+        <ListPreference android:title="@string/btn_settings"
+            android:summary="@string/btn_settings_summary"
+            android:entries="@array/btn_listArray"
+            android:entryValues="@array/btn_listValues"
+            android:defaultValue="1"
+            android:key="saveBtn"/>/>
+    </PreferenceCategory>
+</PreferenceScreen>

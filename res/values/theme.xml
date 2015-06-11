@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="android:Theme.Holo.Light">
-        <item name="android:windowBackground">@drawable/bg_shape</item>
-    </style>
-    <style name="LButtonTheme" parent="@android:style/Widget.Button">
-        <item name="android:background">@drawable/left_button</item>
-    </style>
-    <style name="RButtonTheme" parent="@android:style/Widget.Button">
-        <item name="android:background">@drawable/right_button</item>
+    <style name="ButtonTheme" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/button</item>
     </style>
     <style name="CButtonTheme" parent="@android:style/Widget.Button">
         <item name="android:background">@drawable/central_button</item>
